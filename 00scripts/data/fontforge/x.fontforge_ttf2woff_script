@@ -1,0 +1,7 @@
+#!/usr/local/bin/fontforge
+# Quick and dirty hack: converts a font to woff (.woff)
+Print("Opening "+$1);
+Open($1);
+Print("Saving "+$1:r+".woff");
+Generate($1:r+".woff");
+Quit(0);
