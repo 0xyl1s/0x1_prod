@@ -18,8 +18,8 @@ module X module Prod module Utils
         raw_number = x__integer_2_string(current, l_base)
         if l_base == :bin
           raw_number = x__format_pad(raw_number, :right, 8, '0')
-        elsif l_base == :hex
-          raw_number = raw_number.insert(0, '0x')
+        #elsif l_base == :hex
+          #raw_number = raw_number.insert(0, '0x')
         end
         print x__format_pad(raw_number, :right, 9, ' ')
         print "\n" if (current+1)%16 == 0
