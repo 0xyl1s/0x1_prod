@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+# tested with ruby 1.9.3
+
+module X module Prod module Utils
+  require_relative '../lib/0x1/0x1_lib.helper.rb'
+
+  class Rgb2Hex
+
+    def initialize(r, g, b)
+      x__load_modules([:standard])
+
+      r_processed = primary_process(r)
+      g_processed = primary_process(g)
+      b_processed = primary_process(b)
+      convert(r_processed, g_processed, b_processed)
+    end
+
+    def primary_process(s_primary)
+      unless x__string_contain_only_numbers?(s_primary)
+        abort "E: rgb values (#{s_primary}) must be integers"
+      end
+      primary = s_primary.sub(/^0*/, '').to_i
+      unless x__is_an_integer?(primary)
+        abort "E: rgb value must be an integer"
+      end
+      unless primary < 256
+        abort "E: rgb value (#{primary}) must be < 256"
+      end
+      primary
+    end
+
+    def convert(i_r, i_g, i_b)
+      printf "#%02x%02x%02x" % [ i_r, i_g, i_b ]
+    end
+
+  end
+
+  unless ARGV.size == 3
+    abort "E: you must supply rgb values (3 integers < 255)"
+  end
+  r, g, b = ARGV
+
+  Rgb2Hex.new(r, g, b)
+
+end end end
+
+
+# ____________________________________________________________________
+# >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
+# Sources, Infos & Contact : http://www.epiculture.org
+# Author: Pierre-Maël Crétinon
+# License: GNU GPLv3 ( www.epiculture.org/ec1/LICENSE )
+# Copyright: 2010-2012 Pierre-Maël Crétinon
+# Sponsor: studio Helianova - http://studio.helianova.com
+# ――――――――――――――――――――――――――――――――――――――#}}}
+# vim: ft=ruby
