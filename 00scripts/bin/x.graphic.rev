@@ -2,11 +2,8 @@
 # encoding: utf-8
 # tested with ruby 1.9.3
 
-system "geeqie &" if ARGV.empty?
-
-ARGV.each do |e_file|
-  system "geeqie #{e_file} &"
-end
+main_command = "feh --geometry 960x1023 #{ARGV.join(' ')} &"
+system main_command
 
 # ____________________________________________________________________
 # >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
