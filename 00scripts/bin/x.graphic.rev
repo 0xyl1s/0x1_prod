@@ -2,7 +2,7 @@
 # encoding: utf-8
 # tested with ruby 1.9.3
 
-main_command = "feh --geometry 960x1023 #{ARGV.join(' ')} &"
+main_command = "feh --image-bg white --geometry 960x1023 #{ARGV.join(' ')} &"
 system main_command
 
 # ____________________________________________________________________
