@@ -1,11 +1,9 @@
 # encoding: utf-8
 
-desc "Run all sub-unit tests"
-task :alltestunit do
-  Dir.chdir("./00scripts/test/0x1_prod/") { sh "rake test" }
+task :default do
+  puts "rake from 0x1_prod root."
 end
 
-task :default => :alltestunit
 
 # ____________________________________________________________________
 # >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
