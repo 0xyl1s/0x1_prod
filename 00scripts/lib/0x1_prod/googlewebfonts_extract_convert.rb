@@ -12,7 +12,6 @@ module X module Prod
       @x_lib_path_base = X_LIB_PATH_BASE
       x__lib_load_modules([:standard])
       googlewebfont_raw_folder = "#{x__user_homedir}/_/003eclipses/2012resources/fonts/01/googlefontdirectory/test1"
-      #x__dir_list_recursive_raw(googlewebfont_raw_folder)
       puts "gen"
     end
 
