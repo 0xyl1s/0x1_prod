@@ -4,7 +4,6 @@ task :default do
   puts "rake from 0x1_prod root."
 end
 
-
 # ____________________________________________________________________
 # >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
 # Sources, Infos & Contact : http://www.epiculture.org

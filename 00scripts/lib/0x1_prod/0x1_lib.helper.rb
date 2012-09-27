@@ -1,25 +1,13 @@
 # encoding: utf-8
 # tested with ruby 1.9.3
 
-X_LIB_PATH = "#{Dir.home}/.0x1/00mu/00sourcing/0x1_lib"
+module X module Prod
+  X_LIB_PATH_BASE = ".0x1/00mu/00sourcing/0x1_lib"
 
-def x__load_modules(x__modules2load)
-  unless x__modules2load.is_a?(Array)
-    abort "X: x__modules2load must be an array (#{x__modules2load.class})"
-  end
-  x__modules2load.each do |module2load|
-    case module2load
-    when :standard
-      require_relative "#{X_LIB_PATH}/0x1/lib/toolkit/standard.rb"
-      extend X::Lib::Toolkit::Standard
-    when :online
-      require_relative "#{X_LIB_PATH}/0x1/lib/toolkit/online.rb"
-      extend X::Lib::Toolkit::Online
-    else
-      abort "XERROR: module2load: no such module as #{module2load}"
-    end
-  end
-end
+  require "#{Dir.home}/.0x1/00mu/00sourcing/0x1_lib/0x1/lib/toolkit/standard.rb"
+
+
+end end
 
 # ____________________________________________________________________
 # >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
