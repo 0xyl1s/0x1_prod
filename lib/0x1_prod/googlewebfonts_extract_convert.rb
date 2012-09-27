@@ -3,9 +3,9 @@
 # tested with ruby 1.9.3
 
 module X module Prod
+  require_relative '0x1_lib.helper.rb'
 
   class GoogleWebfontsExtractConvert
-    require_relative '0x1_lib.helper.rb'
     include X::Lib::Toolkit::Standard
 
     def initialize()
